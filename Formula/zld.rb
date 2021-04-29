@@ -1,14 +1,11 @@
 class Zld < Formula
-  version "1.2.1"
+  version "1.3.0"
   desc "A faster version of ld, Apple's linker"
-  url "https://github.com/michaeleisel/zld/archive/#{version}.zip"
-  sha256 "463faa979483a173d66c6204ce1289ddc05319ad70dfb0e685c1fbf9ca9ecd11"
+  url "https://github.com/michaeleisel/zld/releases/download/#{version}/zld.tar.xz"
+  sha256 "d264d8ae7b259d43895870df55b0b5e60c237b1bcd5560bfd8519f007846708f"
   homepage "https://github.com/michaeleisel/zld"
-  depends_on "cmake" => :build
 
   def install
-    system "make", "clean"
-    system "make", "build"
-    bin.install "build/Build/Products/Release/zld"
+    bin.install "zld"
   end
 end
